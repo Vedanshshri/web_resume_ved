@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import 'package:ved_resume_web_app/view/methods/launchUrl.dart';
 
 class About extends StatelessWidget {
@@ -50,7 +50,13 @@ class About extends StatelessWidget {
                         "assets/icons/facebook.png",
                         scale: 100,
                       ),
-                      label: Text("Facebook")),
+                      label: Text(
+                        "Facebook",
+                        style: TextStyle(
+                            fontSize: w * 0.02,
+                            color:
+                                Theme.of(context).textTheme.headline2!.color),
+                      )),
                   TextButton.icon(
                       onPressed: () {
                         launchInBrowser("https://github.com/Vedanshshri");
@@ -59,7 +65,13 @@ class About extends StatelessWidget {
                         "assets/icons/github.png",
                         scale: 100,
                       ),
-                      label: Text("Github")),
+                      label: Text(
+                        "Github",
+                        style: TextStyle(
+                            fontSize: w * 0.02,
+                            color:
+                                Theme.of(context).textTheme.headline2!.color),
+                      )),
                   TextButton.icon(
                       onPressed: () {
                         launchInBrowser(
@@ -69,7 +81,13 @@ class About extends StatelessWidget {
                         "assets/icons/instagram.png",
                         scale: 100,
                       ),
-                      label: Text("Instagram")),
+                      label: Text(
+                        "Instagram",
+                        style: TextStyle(
+                            fontSize: w * 0.02,
+                            color:
+                                Theme.of(context).textTheme.headline2!.color),
+                      )),
                   TextButton.icon(
                       onPressed: () {
                         launchInBrowser(
@@ -79,7 +97,13 @@ class About extends StatelessWidget {
                         "assets/icons/linkden.png",
                         scale: 100,
                       ),
-                      label: Text("Linkden")),
+                      label: Text(
+                        "Linkden",
+                        style: TextStyle(
+                            fontSize: w * 0.02,
+                            color:
+                                Theme.of(context).textTheme.headline2!.color),
+                      )),
                   TextButton.icon(
                       onPressed: () {
                         launchInBrowser("https://twitter.com/Vedansh81676067");
@@ -88,7 +112,13 @@ class About extends StatelessWidget {
                         "assets/icons/twitter.png",
                         scale: 100,
                       ),
-                      label: Text("Twitter")),
+                      label: Text(
+                        "Twitter",
+                        style: TextStyle(
+                            fontSize: w * 0.02,
+                            color:
+                                Theme.of(context).textTheme.headline2!.color),
+                      )),
                 ],
               ),
             ),

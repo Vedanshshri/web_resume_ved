@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ved_resume_web_app/view/colors.dart';
 import 'package:ved_resume_web_app/view/home.dart';
-import 'package:ved_resume_web_app/widgets/appBar.dart';
 
 void main() {
   runApp(MyApp());
