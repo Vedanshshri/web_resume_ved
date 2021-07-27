@@ -8,6 +8,7 @@ class UiColors {
   Color appbarColor = new Color(0xffe1bee7);
   //new Color(0xff020a34);
   static final Color card = Colors.amber;
+  static final Color card2 = Colors.purple;
   static final Color overlay = new Color(0xff020E26);
   static final Color background = new Color(0xffffffff);
   // new Color(0xfff4e4f4);

@@ -21,7 +21,7 @@ class Projects extends StatelessWidget {
         itemBuilder: (_, i) {
           return Card(
               elevation: 10,
-              color: Colors.amber,
+              color: Theme.of(context).disabledColor,
               //margin: EdgeInsets.all(width * 0.02),
               // width: 100.0,
               // height: 100.0,

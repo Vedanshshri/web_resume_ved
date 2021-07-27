@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.0),
         ),
       ),
-
+      disabledColor: UiColors.card,
       canvasColor: Colors.transparent,
       // primaryColor: appColors.primary,
       brightness: Brightness.dark,
@@ -160,7 +160,7 @@ class MyApp extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.0),
         ),
       ),
-
+      disabledColor: UiColors.card2,
       canvasColor: UiColors.darkBackground,
       primaryColor: UiColors.darkBackground,
       // accentColor: appColors.secondary,
