@@ -153,6 +153,7 @@ class MyApp extends StatelessWidget {
       //   color: appColors.secondary,
       // ),
       cardTheme: CardTheme(
+        shadowColor: UiColors.background,
         elevation: 8.0,
         color: UiColors.darkBackground,
         shape: RoundedRectangleBorder(
