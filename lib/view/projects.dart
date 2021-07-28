@@ -74,7 +74,7 @@ class Projects extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Skills : ",
+                    "Skills Involved: ",
                     style: TextStyle(
                         fontSize: w * 0.023,
                         fontWeight: FontWeight.bold,
