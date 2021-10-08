@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
             ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        // backgroundColor: appColors.primary.withOpacity(0.9),
-        // selectedItemColor: appColors.secondary,
+        backgroundColor: Colors.indigo,
+        selectedItemColor: Colors.blue,
         unselectedItemColor: UiColors.black,
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -78,14 +78,15 @@ class MyApp extends StatelessWidget {
           ),
       cardTheme: CardTheme(
         elevation: 8.0,
-        color: UiColors.background,
+        shadowColor: Colors.blue.shade900,
+        color: Colors.blueGrey,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
         ),
       ),
       disabledColor: UiColors.card,
       canvasColor: Colors.transparent,
-      // primaryColor: appColors.primary,
+      scaffoldBackgroundColor: Colors.lightBlue.shade200,
       brightness: Brightness.dark,
       accentColor: UiColors.overlay,
       backgroundColor: UiColors.background,

@@ -20,15 +20,74 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // var h = MediaQuery.of(context).size.height;
+    var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
+      floatingActionButton: Container(
+        child: Container(
+          height: h * 0.9,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset(
+                    "assets/icons/facebook.png",
+                    scale: 100,
+                  ),
+                  onPressed: () {
+                    launchInBrowser(
+                        "https://www.facebook.com/vedansh.shrivastava.56/");
+                  }),
+              FloatingActionButton(
+                backgroundColor: Colors.transparent,
+                child: Image.asset(
+                  "assets/icons/github.png",
+                  scale: 100,
+                ),
+                onPressed: () {
+                  launchInBrowser("https://github.com/Vedanshshri");
+                },
+              ),
+              FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset(
+                    "assets/icons/instagram.png",
+                    scale: 100,
+                  ),
+                  onPressed: () {
+                    launchInBrowser(
+                        "https://www.instagram.com/shrivastavavedansh/");
+                  }),
+              FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset(
+                    "assets/icons/linkden.png",
+                    scale: 100,
+                  ),
+                  onPressed: () {
+                    launchInBrowser(
+                        "https://www.linkedin.com/in/vedansh-shrivastava-810a6b1a4/");
+                  }),
+              FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset(
+                    "assets/icons/twitter.png",
+                    scale: 100,
+                  ),
+                  onPressed: () {
+                    launchInBrowser("https://twitter.com/Vedansh81676067");
+                  }),
+            ],
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
         selectedItemColor: Theme.of(context).accentColor,
         elevation: 10,
-        backgroundColor: Theme.of(context).backgroundColor,
+        // backgroundColor: Theme.of(context).cardTheme.color,
         items: [
           BottomNavigationBarItem(label: "About", icon: Icon(Icons.info)),
           BottomNavigationBarItem(
@@ -36,7 +95,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(label: "Blogs", icon: Icon(Icons.message))
         ],
       ),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(alignment: Alignment.topRight, children: [
         Center(
           child: tabWidgets.elementAt(_currentIndex),

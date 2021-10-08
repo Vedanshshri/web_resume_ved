@@ -8,28 +8,6 @@ class Projects extends StatelessWidget {
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
-    Widget customGridView({int crossAxisCount = 2, required List skills}) {
-      final width = MediaQuery.of(context).size.width;
-      final height = MediaQuery.of(context).size.height;
-      return GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-        ),
-        itemCount: skills.length,
-        itemBuilder: (_, i) {
-          return Card(
-              elevation: 10,
-              color: Theme.of(context).disabledColor,
-              //margin: EdgeInsets.all(width * 0.02),
-              // width: 100.0,
-              // height: 100.0,
-              // constraints: BoxConstraints(maxHeight: 100.0, maxWidth: 100.0),
-              child: Center(child: Text(skills[i])));
-        },
-      );
-    }
 
     Widget projectCard({
       required String title,
@@ -41,54 +19,67 @@ class Projects extends StatelessWidget {
         color: Theme.of(context).cardTheme.color,
         shadowColor: Theme.of(context).cardTheme.shadowColor,
         child: Container(
-          height: h * 0.4,
+          height: h * 0.3,
           width: w,
           child: Column(
-            children: [
-              Center(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                      fontSize: w * 0.03,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).textTheme.headline2!.color),
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Center(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                        fontSize: w * 0.03,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).textTheme.headline2!.color),
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    "Description : ",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: w * 0.015,
-                        color: Theme.of(context).textTheme.headline2!.color),
-                  ),
-                  Text(
-                    description,
-                    style: TextStyle(
-                        fontSize: w * 0.015,
-                        color: Theme.of(context).textTheme.headline2!.color),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    "Skills Involved: ",
-                    style: TextStyle(
-                        fontSize: w * 0.023,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).textTheme.headline2!.color),
-                  ),
-                ],
-              ),
-              Container(
-                  height: h * 0.2,
+                Row(
+                  children: [
+                    Text(
+                      "Description : ",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: w * 0.030,
+                          color: Theme.of(context).textTheme.headline2!.color),
+                    ),
+                    Text(
+                      description,
+                      style: TextStyle(
+                          fontSize: w * 0.015,
+                          color: Theme.of(context).textTheme.headline2!.color),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Skills Involved: ",
+                      style: TextStyle(
+                          fontSize: w < 600 ? 24 : 30,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).textTheme.headline2!.color),
+                    ),
+                  ],
+                ),
+                Container(
+                  height: h * 0.07,
                   width: w,
-                  child: customGridView(
-                      skills: skills, crossAxisCount: w > 800 ? 10 : 5)),
-            ],
-          ),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: skills.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        width: w * 0.1,
+                        // height: h * 0.05,
+                        child: Card(
+                          child: Center(child: Text(skills[index])),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ]),
         ),
       );
     }
